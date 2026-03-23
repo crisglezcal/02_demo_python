@@ -23,3 +23,28 @@ def fizz_buzz ():
             print(number)
 
 print(fizz_buzz())
+
+'''
+¿Es un anagrama?
+Escribe una función que reciba dos palabras (String) y retorne
+verdadero o falso (Bool) según sean o no anagramas.
+- Un Anagrama consiste en formar una palabra reordenando TODAS las letras de otra palabra inicial.
+- NO hace falta comprobar que ambas palabras existan.
+- Dos palabras exactamente iguales no son anagrama.
+'''
+
+def anagrama (string1, string2):
+
+    if string1 == string2:
+        return False
+    elif len(string1) != len(string2):
+        return False
+    elif sorted(string1) == sorted(string2):
+        return True
+    else:
+        return False
+    
+print(anagrama("roma", "amor"))    # True
+print(anagrama("perro", "repro"))  # True
+print(anagrama("hola", "hola"))    # False
+print(anagrama("gato", "perro"))   # False
