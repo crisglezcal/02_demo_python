@@ -185,3 +185,35 @@ rectangle = {
 print("Área del triángulo:", polygon(triangle))
 print("Área del cuadrado:", polygon(square))
 print("Área del rectángulo:", polygon(rectangle))
+
+
+'''
+ Crea un programa que cuente cuantas veces se repite cada palabra y que muestre el recuento final de todas ellas.
+ - Los signos de puntuación no forman parte de la palabra.
+ - Una palabra es la misma aunque aparezca en mayúsculas y minúsculas.
+- No se pueden utilizar funciones propias del lenguaje que lo resuelvan automáticamente.
+'''
+
+def howmuchwords (text):
+    text = text.lower()
+    punctuation =".,;"
+    clean_text=""
+    
+    for caracter in text:
+        if caracter not in punctuation:
+            clean_text+=caracter
+
+    words=clean_text.split()
+
+    recount={}
+
+    for word in words:
+        if word in recount:
+            recount[word]=recount[word]+1
+        else:
+            recount[word]=1
+
+    return recount
+
+result=howmuchwords("Hola mundo, hola; mundo.")
+print(result)
