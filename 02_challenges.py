@@ -194,7 +194,7 @@ print("Área del rectángulo:", polygon(rectangle))
 - No se pueden utilizar funciones propias del lenguaje que lo resuelvan automáticamente.
 '''
 
-def howmuchwords (text):
+def howmuchwords(text):
     text = text.lower()
     punctuation =".,;"
     clean_text=""
@@ -217,3 +217,26 @@ def howmuchwords (text):
 
 result=howmuchwords("Hola mundo, hola; mundo.")
 print(result)
+
+
+'''
+Crea un programa se encargue de transformar un número decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+'''
+
+def binary(number):
+    # Caso especial para el número 0
+    if number == 0:
+        return "0"
+    
+    binary_string = ""
+    
+    # Mientras el número sea mayor a 0, seguimos dividiendo
+    while number > 0:
+        residue = number % 2          # Obtenemos el 0 o 1
+        binary_string = str(residue) + binary_string  # Lo añadimos al principio
+        number = number // 2          # Actualizamos el número con la división entera
+        
+    return binary_string
+
+# Ejemplo de uso:
+print(binary(13))  # Salida: 1101
